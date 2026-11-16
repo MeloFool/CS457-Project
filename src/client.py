@@ -180,7 +180,8 @@ def print_kick_result(msg, state):
 
 
 def print_score_update(msg):
-    print(f"\n=== Round {msg['round']} complete {'(SUDDEN DEATH) ' if msg['sudden_death'] else ''}===")
+    suffix = "(SUDDEN DEATH) " if msg["sudden_death"] else ""
+    print(f"\n=== Round {msg['round']} complete {suffix}===")
     print(" Round |   P1   |   P2")
     print("-------+--------+-------")
     for entry in msg["history"]:

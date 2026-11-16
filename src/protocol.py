@@ -6,7 +6,6 @@ several messages arriving in one recv(), are both handled correctly.
 """
 
 import json
-import socket
 
 RECV_CHUNK = 4096
 

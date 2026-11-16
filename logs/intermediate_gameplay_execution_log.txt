@@ -1,0 +1,340 @@
+Server's Log:
+
+austin:~/CS/cs457/CS457-Project/src$ python3 server.py -p 6000
+[SERVER] Listening on 0.0.0.0:6000
+[SERVER] Player 1 connected from ('129.82.44.130', 51330)
+[SERVER] Both players connected, match starting.
+[SERVER] Player 2 connected from ('129.82.44.130', 60102)
+[SERVER] Kick 1: P1 shot LEFT, P2 dove LEFT -> SAVE
+[SERVER] Kick 2: P2 shot CENTER, P1 dove LEFT -> GOAL
+[SERVER] Kick 3: P1 shot LEFT, P2 dove RIGHT -> GOAL
+[SERVER] Kick 4: P2 shot CENTER, P1 dove RIGHT -> GOAL
+[SERVER] Kick 5: P1 shot CENTER, P2 dove CENTER -> SAVE
+[SERVER] Kick 6: P2 shot LEFT, P1 dove RIGHT -> GOAL
+[SERVER] Kick 7: P1 shot LEFT, P2 dove LEFT -> SAVE
+[SERVER] Kick 8: P2 shot RIGHT, P1 dove CENTER -> GOAL
+[SERVER] Kick 9: P1 shot CENTER, P2 dove LEFT -> GOAL
+[SERVER] Kick 10: P2 shot CENTER, P1 dove RIGHT -> GOAL
+[SERVER] Game over: P2 wins {1: 2, 2: 5}
+[SERVER] Player 1 disconnected.
+[SERVER] Player 2 disconnected.
+
+------------------------------------------------------------------------------------------------------
+
+Client 1's log:
+
+austin:~/CS/cs457/CS457-Project/src$ python3 client.py -i austin.cs.colostate.edu -p 6000
+[CLIENT] Resolved austin.cs.colostate.edu -> 129.82.44.130
+[CLIENT] Connected to austin.cs.colostate.edu (129.82.44.130:6000)
+[CLIENT] Connected as Player 1. Waiting for Player 2...
+
+--- Round 1, Kick 1 ---
+        ______________________
+       |  LEFT | CENTER | RIGHT |
+       |_______|________|_______|
+YOUR TURN (SHOOTER): choose where to shoot.
+Where do you shoot? [L]eft / [C]enter / [R]ight: L
+[CLIENT] Choice locked in. Waiting for opponent...
+
+[RESULT] You shot LEFT, keeper dove LEFT -> SAVED!
+Score: You 0 - Opponent 0
+
+--- Round 1, Kick 2 ---
+        ______________________
+       |  LEFT | CENTER | RIGHT |
+       |_______|________|_______|
+YOUR TURN (KEEPER): choose where to dive to block.
+Where do you dive? [L]eft / [C]enter / [R]ight: L
+
+[RESULT] Opponent shot CENTER, keeper dove LEFT -> GOAL!
+Score: You 0 - Opponent 1
+
+=== Round 1 complete ===
+ Round |   P1   |   P2
+-------+--------+-------
+    1  |  miss  |  GOAL
+Score: P1 0 - P2 1
+
+--- Round 2, Kick 3 ---
+        ______________________
+       |  LEFT | CENTER | RIGHT |
+       |_______|________|_______|
+YOUR TURN (SHOOTER): choose where to shoot.
+Where do you shoot? [L]eft / [C]enter / [R]ight: L
+
+[RESULT] You shot LEFT, keeper dove RIGHT -> GOAL!
+Score: You 1 - Opponent 1
+
+--- Round 2, Kick 4 ---
+        ______________________
+       |  LEFT | CENTER | RIGHT |
+       |_______|________|_______|
+YOUR TURN (KEEPER): choose where to dive to block.
+Where do you dive? [L]eft / [C]enter / [R]ight: R
+[CLIENT] Choice locked in. Waiting for opponent...
+
+[RESULT] Opponent shot CENTER, keeper dove RIGHT -> GOAL!
+Score: You 1 - Opponent 2
+
+=== Round 2 complete ===
+ Round |   P1   |   P2
+-------+--------+-------
+    1  |  miss  |  GOAL
+    2  |  GOAL  |  GOAL
+Score: P1 1 - P2 2
+
+--- Round 3, Kick 5 ---
+        ______________________
+       |  LEFT | CENTER | RIGHT |
+       |_______|________|_______|
+YOUR TURN (SHOOTER): choose where to shoot.
+Where do you shoot? [L]eft / [C]enter / [R]ight: C
+
+[RESULT] You shot CENTER, keeper dove CENTER -> SAVED!
+Score: You 1 - Opponent 2
+
+--- Round 3, Kick 6 ---
+        ______________________
+       |  LEFT | CENTER | RIGHT |
+       |_______|________|_______|
+YOUR TURN (KEEPER): choose where to dive to block.
+Where do you dive? [L]eft / [C]enter / [R]ight: R 
+
+[RESULT] Opponent shot LEFT, keeper dove RIGHT -> GOAL!
+Score: You 1 - Opponent 3
+
+=== Round 3 complete ===
+ Round |   P1   |   P2
+-------+--------+-------
+    1  |  miss  |  GOAL
+    2  |  GOAL  |  GOAL
+    3  |  miss  |  GOAL
+Score: P1 1 - P2 3
+
+--- Round 4, Kick 7 ---
+        ______________________
+       |  LEFT | CENTER | RIGHT |
+       |_______|________|_______|
+YOUR TURN (SHOOTER): choose where to shoot.
+Where do you shoot? [L]eft / [C]enter / [R]ight: L
+[CLIENT] Choice locked in. Waiting for opponent...
+
+[RESULT] You shot LEFT, keeper dove LEFT -> SAVED!
+Score: You 1 - Opponent 3
+
+--- Round 4, Kick 8 ---
+        ______________________
+       |  LEFT | CENTER | RIGHT |
+       |_______|________|_______|
+YOUR TURN (KEEPER): choose where to dive to block.
+Where do you dive? [L]eft / [C]enter / [R]ight: C
+
+[RESULT] Opponent shot RIGHT, keeper dove CENTER -> GOAL!
+Score: You 1 - Opponent 4
+
+=== Round 4 complete ===
+ Round |   P1   |   P2
+-------+--------+-------
+    1  |  miss  |  GOAL
+    2  |  GOAL  |  GOAL
+    3  |  miss  |  GOAL
+    4  |  miss  |  GOAL
+Score: P1 1 - P2 4
+
+--- Round 5, Kick 9 ---
+        ______________________
+       |  LEFT | CENTER | RIGHT |
+       |_______|________|_______|
+YOUR TURN (SHOOTER): choose where to shoot.
+Where do you shoot? [L]eft / [C]enter / [R]ight: C
+[CLIENT] Choice locked in. Waiting for opponent...
+
+[RESULT] You shot CENTER, keeper dove LEFT -> GOAL!
+Score: You 2 - Opponent 4
+
+--- Round 5, Kick 10 ---
+        ______________________
+       |  LEFT | CENTER | RIGHT |
+       |_______|________|_______|
+YOUR TURN (KEEPER): choose where to dive to block.
+Where do you dive? [L]eft / [C]enter / [R]ight: R
+
+[RESULT] Opponent shot CENTER, keeper dove RIGHT -> GOAL!
+Score: You 2 - Opponent 5
+
+=== Round 5 complete (SUDDEN DEATH) ===
+ Round |   P1   |   P2
+-------+--------+-------
+    1  |  miss  |  GOAL
+    2  |  GOAL  |  GOAL
+    3  |  miss  |  GOAL
+    4  |  miss  |  GOAL
+    5  |  GOAL  |  GOAL
+Score: P1 2 - P2 5
+
+========================================
+GAME OVER - YOU LOSE. (WIN)
+Score: You 2 - Opponent 5
+========================================
+
+
+
+------------------------------------------------------------------------------------------------------
+
+Client 2's Log:
+
+austin:~/CS/cs457/CS457-Project/src$ python3 client.py -i austin.cs.colostate.edu -p 6000
+[CLIENT] Resolved austin.cs.colostate.edu -> 129.82.44.130
+[CLIENT] Connected to austin.cs.colostate.edu (129.82.44.130:6000)
+[CLIENT] Connected as Player 2. Player 2 has joined, starting match!
+
+--- Round 1, Kick 1 ---
+        ______________________
+       |  LEFT | CENTER | RIGHT |
+       |_______|________|_______|
+YOUR TURN (KEEPER): choose where to dive to block.
+Where do you dive? [L]eft / [C]enter / [R]ight: L
+
+[RESULT] Opponent shot LEFT, keeper dove LEFT -> SAVED!
+Score: You 0 - Opponent 0
+
+--- Round 1, Kick 2 ---
+        ______________________
+       |  LEFT | CENTER | RIGHT |
+       |_______|________|_______|
+YOUR TURN (SHOOTER): choose where to shoot.
+Where do you shoot? [L]eft / [C]enter / [R]ight: C
+[CLIENT] Choice locked in. Waiting for opponent...
+
+[RESULT] You shot CENTER, keeper dove LEFT -> GOAL!
+Score: You 1 - Opponent 0
+
+=== Round 1 complete ===
+ Round |   P1   |   P2
+-------+--------+-------
+    1  |  miss  |  GOAL
+Score: P1 0 - P2 1
+
+--- Round 2, Kick 3 ---
+        ______________________
+       |  LEFT | CENTER | RIGHT |
+       |_______|________|_______|
+YOUR TURN (KEEPER): choose where to dive to block.
+Where do you dive? [L]eft / [C]enter / [R]ight: R
+[CLIENT] Choice locked in. Waiting for opponent...
+
+[RESULT] Opponent shot LEFT, keeper dove RIGHT -> GOAL!
+Score: You 1 - Opponent 1
+
+--- Round 2, Kick 4 ---
+        ______________________
+       |  LEFT | CENTER | RIGHT |
+       |_______|________|_______|
+YOUR TURN (SHOOTER): choose where to shoot.
+Where do you shoot? [L]eft / [C]enter / [R]ight: C
+
+[RESULT] You shot CENTER, keeper dove RIGHT -> GOAL!
+Score: You 2 - Opponent 1
+
+=== Round 2 complete ===
+ Round |   P1   |   P2
+-------+--------+-------
+    1  |  miss  |  GOAL
+    2  |  GOAL  |  GOAL
+Score: P1 1 - P2 2
+
+--- Round 3, Kick 5 ---
+        ______________________
+       |  LEFT | CENTER | RIGHT |
+       |_______|________|_______|
+YOUR TURN (KEEPER): choose where to dive to block.
+Where do you dive? [L]eft / [C]enter / [R]ight: C
+[CLIENT] Choice locked in. Waiting for opponent...
+
+[RESULT] Opponent shot CENTER, keeper dove CENTER -> SAVED!
+Score: You 2 - Opponent 1
+
+--- Round 3, Kick 6 ---
+        ______________________
+       |  LEFT | CENTER | RIGHT |
+       |_______|________|_______|
+YOUR TURN (SHOOTER): choose where to shoot.
+Where do you shoot? [L]eft / [C]enter / [R]ight: L
+[CLIENT] Choice locked in. Waiting for opponent...
+
+[RESULT] You shot LEFT, keeper dove RIGHT -> GOAL!
+Score: You 3 - Opponent 1
+
+=== Round 3 complete ===
+ Round |   P1   |   P2
+-------+--------+-------
+    1  |  miss  |  GOAL
+    2  |  GOAL  |  GOAL
+    3  |  miss  |  GOAL
+Score: P1 1 - P2 3
+
+--- Round 4, Kick 7 ---
+        ______________________
+       |  LEFT | CENTER | RIGHT |
+       |_______|________|_______|
+YOUR TURN (KEEPER): choose where to dive to block.
+Where do you dive? [L]eft / [C]enter / [R]ight: L
+
+[RESULT] Opponent shot LEFT, keeper dove LEFT -> SAVED!
+Score: You 3 - Opponent 1
+
+--- Round 4, Kick 8 ---
+        ______________________
+       |  LEFT | CENTER | RIGHT |
+       |_______|________|_______|
+YOUR TURN (SHOOTER): choose where to shoot.
+Where do you shoot? [L]eft / [C]enter / [R]ight: R
+[CLIENT] Choice locked in. Waiting for opponent...
+
+[RESULT] You shot RIGHT, keeper dove CENTER -> GOAL!
+Score: You 4 - Opponent 1
+
+=== Round 4 complete ===
+ Round |   P1   |   P2
+-------+--------+-------
+    1  |  miss  |  GOAL
+    2  |  GOAL  |  GOAL
+    3  |  miss  |  GOAL
+    4  |  miss  |  GOAL
+Score: P1 1 - P2 4
+
+--- Round 5, Kick 9 ---
+        ______________________
+       |  LEFT | CENTER | RIGHT |
+       |_______|________|_______|
+YOUR TURN (KEEPER): choose where to dive to block.
+Where do you dive? [L]eft / [C]enter / [R]ight: L
+
+[RESULT] Opponent shot CENTER, keeper dove LEFT -> GOAL!
+Score: You 4 - Opponent 2
+
+--- Round 5, Kick 10 ---
+        ______________________
+       |  LEFT | CENTER | RIGHT |
+       |_______|________|_______|
+YOUR TURN (SHOOTER): choose where to shoot.
+Where do you shoot? [L]eft / [C]enter / [R]ight: C
+[CLIENT] Choice locked in. Waiting for opponent...
+
+[RESULT] You shot CENTER, keeper dove RIGHT -> GOAL!
+Score: You 5 - Opponent 2
+
+=== Round 5 complete (SUDDEN DEATH) ===
+ Round |   P1   |   P2
+-------+--------+-------
+    1  |  miss  |  GOAL
+    2  |  GOAL  |  GOAL
+    3  |  miss  |  GOAL
+    4  |  miss  |  GOAL
+    5  |  GOAL  |  GOAL
+Score: P1 2 - P2 5
+
+========================================
+GAME OVER - YOU WIN! (WIN)
+Score: You 5 - Opponent 2
+========================================
